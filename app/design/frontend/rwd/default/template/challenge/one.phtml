@@ -1,0 +1,35 @@
+<?php
+
+$products = Mage::getModel('catalog/product')->getCollection()->addAttributeToSelect('*')->joinField(
+																							'qty',
+																							'cataloginventory/stock_item',
+																							'qty',
+																							'product_id=entity_id',
+																							'{{table}}.stock_id=1',
+																							'left')
+																						->addAttributeToFilter(
+																							array(
+																								array('attribute'=> 'qty','qt' => 50),
+																								array('attribute'=> 'qty','lt' => 10)
+																							)
+																						);
+
+foreach($products as $product):?>
+
+<div style="text-align: center; width: 300px; margin-bottom: 50px;">
+	<p>
+		<a href="<?php echo $product->getProductUrl();?>">
+			<img src="<?php echo $product->getImageUrl();?>" />
+			<?php echo $product->getName();?>
+		</a>
+	</p>
+	<p><?php echo '$'. number_format($product->getPrice(), 2,".","");?></p>
+	<p>
+		<button type="button" title="<?php echo $this->__('Add to Cart') ?>" class="button btn-cart"
+				onclick="setLocation('<?php echo Mage::helper('checkout/cart')->getAddUrl($product); ?>')">
+			<span><span><?php echo $this->__('Add to Cart') ?></span></span>
+		</button>
+	</p>
+</div>
+
+<?php endforeach;?>

@@ -1,0 +1,99 @@
+<?xml version="1.0"?>
+<!--
+/**
+ *   PengoStores
+ * 
+ *   PENGOSTORESPENGOSTORESPENGOSTORE=~==~~~===7SPENGOSTORESPENGO
+ *   PENGOSTORESPENGOSTORESPENGO~~~~~~~~~~~~~~~~~~~NGOSTORESPENGO
+ *   PENGOSTORESPENGOSTORES=~=~~~~~~~~~~~~~~~~~~~~~~~OSTORESPENGO
+ *   PENGOSTORESPENGOS8==~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~TORESPENGO
+ *   PENGOSTORESPEN~~~~~~~~~~~~~~~~~~~~~~~~~~~~~=MMMMMM~ORESPENGO
+ *   PENGOSTORES~~~~~~~~~~~~~~~~~~~~~~~~~===MMMMMMMM=~~~~RESPENGO
+ *   PENGOSTOR=~~~~~~~~~~~~~~~~=~+7MMMMMMMMMMM$?M+=~~~~~~=ESPENGO
+ *   PENGOST?~~~~~~~~~~=MMMMMMMMMMMMMMMMMM???MD~~~~~~~~~~~=SPENGO
+ *   PENGOS=~~~~~~~~~=MMMMMMMMMMMMMMMMM???IMM=~~~~~~~~~~~~~SPENGO
+ *   PENGO=~~~~~~~~~7MMMMMMMMMM,.?MMM??OMMM=~~~~~~~~~~~~~~~+PENGO
+ *   PENGO~~~~~~~~~MMMMMMMMMMMMMMMMMMMMMMM~~~~~~~~~~~~~~~~~~PENGO
+ *   PENG~~~~~~~~~MMMMMMMMMMMMMMMMMMMMMMM~~~~~~~~~~~~~~~~~~~PENGO
+ *   PENG~~~~~~~=MMMMMMMMMMMMMMMMMMMMMMM~=~~~~~~~~~~~~~~~~~~PENGO
+ *   PENG~~~~~~~NMMMM++MMMMMMMMMMMMMMMM=~~~~~~~~~~~~~~~~~~~~7ENGO
+ *   PENG~~~~~~~MMM++++=MMMMMMMMMMMMMM=~~~~~~~~~~~~~~~~~~~~~?ENGO
+ *   PENG~~~~~=MMM?+++==MMMMMMMMMMMMMM~~~~~~~~~~~~~~~~~~~~~~?ENGO
+ *   PENG~~~~~~MM??++====MMMMMMMMMMMMM~~~~~~~~~~~~~~~~~~~~~~$ENGO
+ *   PENG~~~~~MM?+++===~~~MMMMMMMMMMMMM~=~~~~~~~~~~~~~~~~~~~PENGO
+ *   PENG+~~~~MM?+~.....:~:8MMMMM~...OMM~~~~~~~~~~~~~~~~~~~~PENGO
+ *   PENGO=~~~M=....... RES   . ......MMM=~~~~~~~~~~~~~~~~~~PENGO
+ *   PENGOS~~=MM.....STORESPEN ........MM=~~~~~~~~~~~~~~~~~$PENGO
+ *   PENGOS7~~MMM...OSTORESPENG~ . . . .MM~~~~~~~~~~~~~~~~=SPENGO
+ *   PENGOST7~ESPENGOSTORESPENGOS. . .   MM=~~~~~~~~~~~~=~ESPENGO
+ *   PENGOSTORESPENGOSTORESPENGOST . .   .MM~~~~~~~~~~~~7RESPENGO
+ *   PENGOSTORESPENGOSTORESPENGOST=.......,MM~~~~~~~~~=TORESPENGO
+ *   PENGOSTORESPENGOSTORESPENGOSTO. .    .,MM=~~~~=GOSTORESPENGO
+ *   PENGOSTORESPENGOSTORESPENGOSTO. .   ...MMM=~=ENGOSTORESPENGO
+ *   PENGOSTORESPENGOSTORESPENGOSTO..........ORESPENGOSTORESPENGO
+ *   PENGOSTORESPENGOSTORESPENGOSTO.........TORESPENGOSTORESPENGO
+ *   PENGOSTORESPENGOSTORESPENGOST.......GOSTORESPENGOSTORESPENGO
+ *   PENGOSTORESPENGOSTORESPENGOSTORESPENGOSTORESPENGOSTORESPENGO
+ * 
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the PengoStores License
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://www.pengostores.com/license/
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@pengostores.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Edit or add to this file under your own risk.
+ * PengoStores will not provide  support to any developed extension
+ * which has been modified after its official release.
+ * @author Alejandro Franco <alejandro@pengostores.com>
+ * @package  Pengo
+ * @category Pengo_Challenge
+ * @license  http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ * 
+ */
+-->
+<layout version="0.1.0">
+	<challenge_number_one>
+		<reference name="root">
+			 <action method="setTemplate"><template>page/1column.phtml</template></action>
+		</reference>
+		<reference name="content">
+			<block name="one" type="core/template" template="challenge/one.phtml"></block>
+		</reference>
+	</challenge_number_one>
+	<challenge_number_two>
+		<reference name="root">
+			 <action method="setTemplate"><template>page/1column.phtml</template></action>
+		</reference>
+		<reference name="content">
+			<!--Forma simple-->
+			<!--<block name="two" type="core/template" template="challenge/two.phtml"></block>-->
+			
+			<!--Haciendo uso de blocks-->
+			<block name="two" type="recentproducts/recentproducts" template="challenge/recentproducts.phtml"></block>
+		</reference>
+	</challenge_number_two>	
+	<challenge_number_three>
+		<reference name="root">
+            <action method="setTemplate"><template>page/1column.phtml</template></action>
+        </reference>
+		<reference name="content">
+			<!--Prueba de acceso-->
+            <!--<block name="three" type="core/template" template="challenge/three.phtml"></block>-->
+			
+			<!--Todos los productos, aunque se deben agregar a la categoría por defecto con ID 2-->
+            <!--<block name="three" type="catalog/product_list" template="catalog/product/list.phtml">
+				<action method="setCategoryId"><category_id>2</category_id></action>
+			</block>-->
+			
+			<block name="three" type="catalog/product_list" template="catalog/product/list.phtml">
+				<action method="setCategoryId"><category_id>***</category_id></action>
+			</block>
+        </reference>
+	</challenge_number_three>	
+</layout>
